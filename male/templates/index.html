@@ -6,7 +6,33 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body>
+<style>
+    #buts-page1 {
+    margin: auto;
+    margin-top: 700px;
+    font-family: cursive ;
+}
+
+.play-but-page1 {
+    background: url(../static/img/play-but.jpg);
+    background-size: cover;
+    font-size: 40px;
+    padding: 20px 80px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+}
+.play-but-page1:hover {
+    box-shadow: 0px 0px 60px #00f7ff;
+}
+
+#body-page1{
+    background: url(../static/img/bk.jpg) no-repeat;
+    background-size: cover;
+}
+</style>
+
+<body id="body-page1">
     <table id="buts-page1">
         <tr>
             <td>
