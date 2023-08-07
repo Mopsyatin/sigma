@@ -16,9 +16,8 @@ def question2(way):
     way = way
     return render_template("question_2.html")
 
-@app.route("/<way>/correct")
-def correct(way):
-    way = way
+@app.route("/correct")
+def correct():
     return render_template("correct.html")
 
 @app.route("/mistake")
