@@ -1,13 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <title>Correct!</title>
 </head>
 
-<body>
+<style>
+    #body-page-win {
+        font-family: cursive;
+        background: url(../static/img/dog_win.jpg);
+        background-size: cover;
+        color: aliceblue;
+    }
+    .menu-but {
+        text-decoration: none;
+        color: aliceblue;
+        font-size: 40px;
+        background: url(../static/img/blue_but.png);
+        width: 400px;
+        padding: 30px 60px 30px;
+        border-radius: 25px;
+    }
+    .menu-but-block {
+        margin-left: 23%;
+        margin-top: 60px;
+    }
+    .menu-but:hover {
+        box-shadow: 0px 0px 60px blue;
+    }
+    .next-but {
+        text-decoration: none;
+        color: aliceblue;
+        font-size: 40px;
+        background: url(../static/img/blue_but.png);
+        width: 400px;
+        padding: 30px 80px 30px;
+        border-radius: 25px;
+    }
+    .next-but-block {
+        margin-left: 23%;
+        margin-top: 100px;
+    }
+    .next-but:hover {
+        box-shadow: 0px 0px 60px blue;
+    }
+    .yo-win{
+        font-size: 80px;
+        padding: 20px 80px;
+        border-radius: 40px;
+        box-shadow: 0px 0px 60px cyan;
+    }
+    .text {
+        margin-left: 100px;
+        margin-top: 100px;
+    }
+</style>
 
+<body id="body-page-win">
+    <table class="text">
+        <tr>
+            <td>
+                <h1 class="yo-win">Йооо! Правильно!</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="menu-but-block"><a href="/" class="menu-but"> Забрать деньги</a></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="next-but-block"><a href="/question_2" class="next-but"> Продолжить</a></div>
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>
