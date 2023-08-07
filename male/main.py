@@ -6,8 +6,18 @@ app = Flask(__name__)
 def main():
     return render_template("index.html")
 
-@app.route("/Question_1")
-def question1():
+@app.route("/<way>")
+def question1(way):
+    way = way
     return render_template("question1.html")
+
+@app.route("/<way>")
+def question2(way):
+    way = way
+    return render_template("question_2.html")
+
+@app.route("/correct")
+def correct():
+    return render_template("correct.html")
 
 app.run(debug = True)

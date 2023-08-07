@@ -66,6 +66,7 @@
 </style>
 
 <body id="body-page2">
+    {% block content %}
     <h1>Вопрос №1: Как выглядит poker face?</h1>
     <table class="Question_1">
         <tr>
@@ -74,10 +75,10 @@
         </tr>
         <tr>
             <td><div id="answer3-question1"><a href="" class="answer3-question1"></a></div></td>
-            <td><div id="answer4-question1"><a href="" class="answer4-question1"></a></div></td>
+            <td><div id="answer4-question1"><a href="/correct" class="answer4-question1"></a></div></td>
         </tr>
     </table>
-    
+    {% endblock %}
 </body>
 
 </html>
