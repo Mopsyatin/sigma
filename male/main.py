@@ -20,4 +20,8 @@ def question2(way):
 def correct():
     return render_template("correct.html")
 
+@app.route("/mistake")
+def mistake():
+    return render_template("mistake.html")
+
 app.run(debug = True)

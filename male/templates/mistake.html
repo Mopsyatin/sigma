@@ -6,8 +6,54 @@
     <title>You_have_made_a_mistake</title>
 </head>
 
-<body>
-    
+<style>
+    #body-page-mistake {
+        font-family: cursive;
+        background: url(../static/img/pepe_mistake.jpg);
+        background-size: cover;
+        color: aliceblue;
+    }
+    .menu-but {
+        text-decoration: none;
+        color: aliceblue;
+        font-size: 40px;
+        background: url(../static/img/menu_but_texture.png);
+        width: 400px;
+        padding: 20px 40px;
+        border-radius: 25px;
+    }
+    .menu-but-block {
+        margin-top: 100px;
+    }
+    .menu-but:hover {
+        box-shadow: 0px 0px 60px red;
+    }
+    .yo-mistake {
+        font-size: 80px;
+        background: url(../static/img/play-but.jpg);
+        padding: 20px 40px;
+        border-radius: 40px;
+        box-shadow: 0px 0px 60px cyan;
+    }
+    .text {
+        margin-left: 100px;
+        margin-top: 100px;
+    }
+</style>
+
+<body id="body-page-mistake">
+    <table class="text">
+        <tr>
+            <td>
+                <h1 class="yo-mistake">Ой Ой! Вы ошиблись!</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="menu-but-block"><a href="/" class="menu-but">Вернуться в меню</a></div>
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>
