@@ -9,7 +9,7 @@ def main():
 @app.route("/<way>")
 def question1(way):
     way = way
-    return render_template("question1.html")
+    return render_template("question_1.html")
 
 @app.route("/<way>")
 def question2(way):
