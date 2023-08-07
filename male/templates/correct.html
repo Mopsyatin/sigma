@@ -58,6 +58,7 @@
 </style>
 
 <body id="body-page-win">
+    {% block content %}
     <table class="text">
         <tr>
             <td>
@@ -71,10 +72,11 @@
         </tr>
         <tr>
             <td>
-                <div class="next-but-block"><a href="/question_2" class="next-but"> Продолжить</a></div>
+                <div class="next-but-block"><a href="{{way + '/correct'}}" class="next-but"> Продолжить</a></div>
             </td>
         </tr>
     </table>
+    {% endblock %}
 </body>
 
 </html>
