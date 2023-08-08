@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href= ../static/img/meme_doge_dog.jpg >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<style>
+    .main-login {
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .login {
+    width: 30%;
+    padding: 50px 30px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .login label {
+    width: 60%;
+    }
+    
+    body {
+        font-family: cursive;
+        background: url(../static/img/bk_reg.jpg);
+        background-size: cover;
+        color: aliceblue;
+    }
+    .form__input {
+    background: #fe6383;
+    border-radius: 10px;
+    padding: 10px;
+    height: 30px;
+    color: gray;
+    font: inherit;
+    border: none;
+    width: 94%;
+    }
+    .form__button {
+    border: 1px solid rgba(14, 165, 233, 1);
+    background: url(../static/img/pink_but.jpg);
+    border-radius: 10px;
+    color: gray;
+    padding: 10px;
+    font: inherit;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+    }
+</style>
+<body>
+      <main class="main-login">
+        {% block content %}
+        <form action="{{ url_for('reg') }}" method="post" class="login">
+            <label for="login">
+                <input class="form__input" type="login" name="login" id="login" placeholder="Введите логин" required>
+            </label>
+            <label for="password">
+                <input class="form__input" type="password" name="password" id="password" placeholder="Введите пароль" required>
+            </label>
+                <button class="form__button">Создать аккаунт</button>
+        </form>
+        {% endblock %}
+      </main>
+</body>
+</html>
