@@ -32,13 +32,12 @@ def question1():
 def question2():
     return render_template("question_2.html")
 
-@app.route("/correct1")
-def correct1():
-    return render_template("correct_question_1.html")
+@app.route("/<level>/correct")
+def correct(level):
+    return render_template("correct.html",
+                           level = str(int(level) + 1)
+                           )
 
-@app.route("/correct2")
-def correct2():
-    return render_template("correct_question_2.html")
 
 @app.route("/mistake")
 def mistake():
