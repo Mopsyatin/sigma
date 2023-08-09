@@ -32,6 +32,10 @@ def question1():
 def question2():
     return render_template("question_2.html")
 
+@app.route("/3")
+def question3():
+     return render_template("question_3.html")
+
 @app.route("/<level>/correct")
 def correct(level):
     return render_template("correct.html",
