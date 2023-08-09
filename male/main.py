@@ -36,6 +36,14 @@ def question2():
 def question3():
      return render_template("question_3.html")
 
+@app.route("/4")
+def question4():
+    return render_template("question_4.html")
+
+@app.route("/5")
+def question5():
+    return render_template("question_5.html")
+
 @app.route("/<level>/correct")
 def correct(level):
     return render_template("correct.html",
