@@ -14,7 +14,7 @@ class User(db.Model):
     login = db.Column(db.String(100), nullable =False)
     password = db.Column(db.String(100), nullable = False)
 
-def __repr__(self):
+    def __repr__(self):
         return f'<Card {self.id}>'
 
 
@@ -66,7 +66,7 @@ def login():
             users_db = User.query.all()
             for user in users_db:
                 if form_login == user.login and form_password == user.password:
-                    return redirect('/index')
+                    return redirect('/')
                 else:
                     error = 'Неправильно указан пользователь или пароль'
                     return render_template('login.html', error=error)
@@ -89,7 +89,7 @@ def reg():
         db.session.commit()
 
         
-        return redirect('/')
+        return redirect('/login')
     
     else:    
         return render_template('registration.html')
