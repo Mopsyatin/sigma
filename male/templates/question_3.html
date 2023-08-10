@@ -52,25 +52,27 @@
 </style>
 
 <body id="body">
+    {% block content %}
     <h1 class="topic">Вопрос №3: Какой сериал породил мем про Карла?</h1>
     <img src="../static/img/question_3_topic_1.jpg" alt="">
     <table>
         <tr>
             <td>
-                <div class="link-block"><a href="/mistake" class="link">«Сверхъестественное»</a></div>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">«Сверхъестественное»</a></div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="link-block"><a href="/mistake" class="link">«Дневники вампира»</a></div>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">«Дневники вампира»</a></div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="link-block"><a href="/3/correct" class="link">«Ходячие мертвецы»</a></div>
+                <div class="link-block"><a href="{{'/3/correct/' + points}}"  class="link">«Ходячие мертвецы»</a></div>
             </td>
         </tr>
     </table>
 </body>
+{% endblock %}
 
 </html>

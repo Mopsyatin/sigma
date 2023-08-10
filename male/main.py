@@ -22,41 +22,55 @@ class User(db.Model):
 
 @app.route("/")
 def main():
-    return render_template("index.html")
+    return render_template("start.html")
 
-@app.route("/1")
-def question1():
-    return render_template("question_1.html")
+@app.route("/menu/<points>")
+def start(points):
+    return render_template("index.html",
+                           points = points)
 
-@app.route("/2")
-def question2():
-    return render_template("question_2.html")
+@app.route("/1/<points>")
+def question1(points):
+    return render_template("question_1.html",
+                           points = points)
 
-@app.route("/3")
-def question3():
-     return render_template("question_3.html")
+@app.route("/2/<points>")
+def question2(points):
+    return render_template("question_2.html",
+                           points = points)
 
-@app.route("/4")
-def question4():
-    return render_template("question_4.html")
+@app.route("/3/<points>")
+def question3(points):
+     return render_template("question_3.html",
+                            points = points)
 
-@app.route("/5")
-def question5():
-    return render_template("question_5.html")
+@app.route("/4/<points>")
+def question4(points):
+    return render_template("question_4.html",
+                           points = points)
 
-@app.route("/<level>/correct")
-def correct(level):
+@app.route("/5/<points>")
+def question5(points):
+    return render_template("question_5.html",
+                           points = points)
+
+@app.route("/<level>/correct/<points>/")
+def correct(level, points):
     return render_template("correct.html",
-                           level = str(int(level) + 1)
+                           level = level,
+                           points = points,
+                           next_level = str(int(level) + 1),
+                           win = str(int(points) + (int(level) * 200000)),
                            )
 
 
-@app.route("/mistake")
-def mistake():
-    return render_template("mistake.html")
+@app.route("/mistake/<points>")
+def mistake(points):
+    return render_template("mistake.html",
+                           points = points)
 
-@app.route('/login', methods=['GET','POST'])
-def login():
+@app.route('/<points>/login', methods=['GET','POST'])
+def login(points):
         error = ''
         if request.method == 'POST':
             form_login = request.form['login']
@@ -66,19 +80,20 @@ def login():
             users_db = User.query.all()
             for user in users_db:
                 if form_login == user.login and form_password == user.password:
-                    return redirect('/')
+                    return redirect('/menu/<points>', points = points)
             else:
                 error = 'Неправильно указан пользователь или пароль'
-                return render_template('login.html', error=error)
+                return render_template('login.html', error=error, points = points)
 
             
         else:
-            return render_template('login.html')
+            return render_template('login.html', 
+                                   points = points)
 
 
 
-@app.route('/registration', methods=['GET','POST'])
-def reg():
+@app.route('/registration/<points>', methods=['GET','POST'])
+def reg(points):
     if request.method == 'POST':
         login= request.form['login']
         password = request.form['password']
@@ -89,10 +104,10 @@ def reg():
         db.session.commit()
 
         
-        return redirect('/login')
+        return redirect('/login/<points>')
     
     else:    
-        return render_template('registration.html')
+        return render_template('registration.html', points = points)
 
 
 if __name__ == "__main__":

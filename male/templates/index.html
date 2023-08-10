@@ -4,7 +4,6 @@
     <link rel="shortcut icon" href= ../static/img/meme_doge_dog.jpg >
     <meta charset="UTF-8">
     <title>Main_Menu</title>
-    <link rel="shortcut icon" href= ../static/img/meme_doge_dog.jpg >
 </head>
 
 <style>
@@ -57,10 +56,11 @@
 </style>
 
 <body id="body-page1">
+    {% block content %}
     <table id="buts-page1">
         <tr>
             <td>
-                <div class="buts-page1"><a class="play-but-page1" href="/login">Войти в акаунт!</a></div>
+                <div class="buts-page1"><a class="play-but-page1" href="{{'/' + points + '/login'}}">Войти в акаунт!</a></div>
             </td>
         </tr> 
         <tr>   
@@ -70,10 +70,11 @@
         </tr>
         <tr>
             <td>
-                <div class="buts-page1"><a class="play-but-page3" href="/1">Играть!</a></div>
+                <div class="buts-page1"><a class="play-but-page3" href="{{'/1/' + points}}">Играть!</a></div>
             </td>
         </tr>
     </table>
+    {% endblock %}
 </body>
 
 </html>

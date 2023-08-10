@@ -8,9 +8,9 @@
 </head>
 
 <style>
-    #body-page-win {
+    body {
         font-family: cursive;
-        background: url(../static/img/dog_win.jpg);
+        background: url(..\static\img\dog_win.jpg);
         background-size: cover;
         color: aliceblue;
     }
@@ -57,8 +57,7 @@
         margin-top: 100px;
     }
 </style>
-
-<body id="body-page-win">
+<body>
     {%  block content %}
     <table class="text">
         <tr>
@@ -68,12 +67,12 @@
         </tr>
         <tr>
             <td>
-                <div class="menu-but-block"><a href="/" class="menu-but"> Забрать деньги</a></div>
+                <div class="menu-but-block"><a href="{{'/menu/' + win }}" class="menu-but"> Забрать деньги</a></div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="next-but-block"><a href="{{'/' + level}}" class="next-but"> Продолжить</a></div>
+                <div class="next-but-block"><a href="{{'/' +  next_level + '/' + points}}" class="next-but"> Продолжить</a></div>
             </td>
         </tr>
     </table>

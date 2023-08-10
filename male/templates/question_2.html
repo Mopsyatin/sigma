@@ -65,17 +65,19 @@
 </style>
 
 <body id="body">
+    {% block content %}
     <h1 class="topic">Вопрос №2: Какой из этих мемов не связан с медицинской тематикой?</h1>
     <table class="Question_2">
         <tr>
-            <td><div id="answer1-question2"><a href="/2/correct" class="answer1-question2"></a></div></td>
-            <td><div id="answer2-question2"><a href="/mistake" class="answer2-question2"></a></div></td>
+            <td><div id="answer1-question2"><a href="{{'/2/correct/' + points}}"  class="answer1-question2"></a></div></td>
+            <td><div id="answer2-question2"><a href="{{'/mistake/' + points}}"  class="answer2-question2"></a></div></td>
         </tr>
         <tr>
-            <td><div id="answer3-question2"><a href="/mistake" class="answer3-question2"></a></div></td>
-            <td><div id="answer4-question2"><a href="/mistake" class="answer4-question2"></a></div></td>
+            <td><div id="answer3-question2"><a href="{{'/mistake/' + points}}"  class="answer3-question2"></a></div></td>
+            <td><div id="answer4-question2"><a href="{{'/mistake/' + points}}"  class="answer4-question2"></a></div></td>
         </tr>
     </table>
+    {% endblock %}
 </body>
 
 </html>

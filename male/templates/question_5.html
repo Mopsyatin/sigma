@@ -52,25 +52,27 @@
 </style>
 
 <body id="body">
+    {% block content %}
     <h1 class="topic">Вопрос №5: Итак, что у этого человека на голове?</h1>
     <img src="../static/img/question_5_topic.jpg" alt="">
     <table>
         <tr>
             <td>
-                <div class="link-block"><a href="/5/correct" class="link">Кандибобер</a></div>
+                <div class="link-block"><a href="{{'/5/correct/' + points}}"  class="link">Кандибобер</a></div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="link-block"><a href="/mistake" class="link">Берет</a></div>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">Берет</a></div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="link-block"><a href="/mistake" class="link">Элегантная шляпка</a></div>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">Элегантная шляпка</a></div>
             </td>
         </tr>
     </table>
+    {% endblock %}
 </body>
 
 </html>

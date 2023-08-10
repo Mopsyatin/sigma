@@ -52,25 +52,27 @@
 </style>
 
 <body id="body">
+    {% block content %}
     <h1 class="topic">Вопрос №4: На кого кричит эта эмоциональная дама?</h1>
     <img src="../static/img/question_4_topic.png" alt="">
     <table>
         <tr>
             <td>
-                <div class="link-block"><a href="/mistake" class="link">На мужа</a></div>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">На мужа</a></div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="link-block"><a href="/4/correct" class="link">На кота</a></div>
+                <div class="link-block"><a href="{{'/4/correct/' + points}}"  class="link">На кота</a></div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="link-block"><a href="/mistake" class="link">На Михаэля</a></div>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">На Михаэля</a></div>
             </td>
         </tr>
     </table>
+    {% endblock %}
 </body>
 
 </html>

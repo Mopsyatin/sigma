@@ -43,6 +43,7 @@
 </style>
 
 <body id="body-page-mistake">
+    {% block content %}
     <table class="text">
         <tr>
             <td>
@@ -51,10 +52,11 @@
         </tr>
         <tr>
             <td>
-                <div class="menu-but-block"><a href="/" class="menu-but"> Вернуться в меню</a></div>
+                <div class="menu-but-block"><a href="{{'/menu/' + points}}" class="menu-but"> Вернуться в меню</a></div>
             </td>
         </tr>
     </table>
+    {% endblock %}
 </body>
 
 </html>

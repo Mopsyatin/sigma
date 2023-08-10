@@ -72,8 +72,8 @@
 
 </style>
 <body>
+    {% block content %}
       <main class="main-login">
-        {% block content %}
         <form action="{{ url_for('login') }}" method="POST" class="login">
             <p class="error">{{error}}</p>
 
@@ -86,7 +86,7 @@
             
 
             <button class="form__button">Войти</button>
-            <a href="/registration" class="form__button reg__link">Зарегистрироваться</a>
+            <a href="{''/registration/' + points}" class="form__button reg__link">Зарегистрироваться</a>
         </form>
         {% endblock %}
       </main>
