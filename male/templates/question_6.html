@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Question_6</title>
+</head>
+
+<style>
+    body {
+        background: url(../static/img/bk_question_6.jpg);
+        background-size: cover;
+    }
+    .topic {
+        animation: color-change 8s infinite;
+        padding: 20px 40px;
+        border-radius: 25px;
+        border: 2px solid cyan;
+        margin-left: 100px;
+        width: 600px;
+        margin-top: 50px;
+        box-shadow: 0px 0px 60px cyan;
+        color: aliceblue;
+    }
+    img {
+        width: 600px;
+        border: 2px solid cyan;
+        margin-left: 100px;
+        border-radius: 40px;
+    }
+    table {
+        margin-left: 100px;
+        margin-top: 50px;
+    }
+    .link {
+        color: aliceblue;
+        font-size: 20px;
+        text-decoration: none;
+        background-color: blue;
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: 2px solid cyan;
+    }
+    .link-block {
+        margin-top: 50px;
+    }
+    .link:hover {
+        box-shadow: 0px 0px 60px cyan;
+    }
+
+    @keyframes color-change{
+        6.25% {
+            background-color: red;
+        } 
+        18.75% {
+            background-color: orange;
+        }
+        31.25% {
+            background-color: yellow;
+        }
+        43.75% {
+            background-color: lime;
+        }
+        56.25% {
+            background-color: green;
+        }
+        68.75% {
+            background-color: blue;
+        }
+        81.25% {
+            background-color: purple;
+        }
+        93.75% {
+            background-color: violet;
+        }
+        100% {
+            background-color: red;
+        }
+    }
+</style>
+
+<body>
+    {% block content %}
+    <h1 class="topic">Когда вышел мем Nyan cat?</h1>
+    <img src="../static/img/question_6_topic.jpg" alt="">
+    <table>
+        <tr>
+            <td>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">2004</a></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="link-block"><a href="{{'/' + level + '/correct/' + points}}"  class="link">2011</a></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">2000</a></div>
+            </td>
+        </tr>
+    </table>
+    {% endblock %}
+</body>
+
+</html>

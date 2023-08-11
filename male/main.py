@@ -10,6 +10,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app )
 
+questions = ['question_1.html','question_2.html','question_3.html','question_4.html','question_5.html','question_6.html']
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -26,19 +27,26 @@ def main():
 
 @app.route("/menu/<points>")
 def start(points):
+    global questions
+    questions = ['question_1.html','question_2.html','question_3.html','question_4.html','question_5.html','question_6.html']
     return render_template("index.html",
                            points = points)
 
 @app.route("/<level>/<points>")
 def question(points, level):
-    return render_template('question_1.html',
+    random_question = random.choice(questions)
+    questions.remove(random_question)
+    return render_template(f"{random_question}",
                            points = points,
-                           level = level)
+                           level = level,)
 
 
 
 @app.route("/<level>/correct/<points>/")
 def correct(level, points):
+    if int(level) == 5:
+        global questions
+        questions = ['question_1.html','question_2.html','question_3.html','question_4.html','question_5.html','question_6.html']
     return render_template("correct.html",
                            level = level,
                            points = points,
