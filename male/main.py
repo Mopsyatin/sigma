@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 
 from flask_sqlalchemy import SQLAlchemy
+import random
 
 app = Flask(__name__)
 
@@ -9,6 +10,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app )
 
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     login = db.Column(db.String(100), nullable =False)
@@ -16,9 +18,6 @@ class User(db.Model):
 
     def __repr__(self):
         return f'<Card {self.id}>'
-
-
-
 
 @app.route("/")
 def main():
@@ -31,27 +30,27 @@ def start(points):
 
 @app.route("/1/<points>")
 def question1(points):
-    return render_template("question_1.html",
-                           points = points)
+    return render_template('question_1.html',
+                           points = points,)
 
 @app.route("/2/<points>")
 def question2(points):
-    return render_template("question_2.html",
+    return render_template('question_2.html',
                            points = points)
 
 @app.route("/3/<points>")
 def question3(points):
-     return render_template("question_3.html",
+     return render_template('question_3.html',
                             points = points)
 
 @app.route("/4/<points>")
 def question4(points):
-    return render_template("question_4.html",
+    return render_template('question_4.html',
                            points = points)
 
 @app.route("/5/<points>")
 def question5(points):
-    return render_template("question_5.html",
+    return render_template('question_5.html',
                            points = points)
 
 @app.route("/<level>/correct/<points>/")
@@ -61,6 +60,7 @@ def correct(level, points):
                            points = points,
                            next_level = str(int(level) + 1),
                            win = str(int(points) + (int(level) * 200000)),
+                           curr_level = int(level),
                            )
 
 
@@ -76,7 +76,6 @@ def login(points):
             form_login = request.form['login']
             form_password = request.form['password']
             
-            #Задание №4. Реализовать проверку пользователей
             users_db = User.query.all()
             for user in users_db:
                 if form_login == user.login and form_password == user.password:
