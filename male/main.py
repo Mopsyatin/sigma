@@ -18,7 +18,7 @@ class User(db.Model):
     points = db.Column(db.Integer, nullable = False)
 
     def __repr__(self):
-        return f'<Card {self.id}>'
+        return f'<User {self.id}>'
 
 @app.route("/")
 def main():
@@ -30,6 +30,13 @@ def start(points):
     questions = ['question_1.html','question_2.html','question_3.html','question_4.html','question_5.html','question_6.html']
     return render_template("index.html",
                            points = points)
+
+@app.route("/leader/<points>")
+def leader(points):
+    users = User.query.order_by(User.points.desc()).filter(User.points > 0).all()
+    return render_template("leader.html",
+                           points = points,
+                           users = users)
 
 @app.route("/<level>/<points>")
 def question(points, level):
