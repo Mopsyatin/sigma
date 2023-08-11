@@ -15,7 +15,6 @@ questions = ['question_1.html','question_2.html','question_3.html','question_4.h
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     login = db.Column(db.String(100), nullable =False)
-    password = db.Column(db.String(100), nullable = False)
     points = db.Column(db.Integer, nullable = False)
 
     def __repr__(self):
@@ -62,18 +61,17 @@ def mistake(points):
                            points = points)
 
 @app.route("/registration/<points>/", methods=['GET','POST'])
-def registration(points):
+def reg(points):
     if request.method == 'POST':
         login= request.form['login']
-        password = request.form['password']
         points = points
 
-        user = User(login=login, password=password, points = points)
+        user = User(login=login, points = points)
         db.session.add(user)
         db.session.commit()
 
         
-        return redirect('/menu/<points>')
+        return redirect('/menu/' + points)
         
     return render_template('registration.html', points = points)
 

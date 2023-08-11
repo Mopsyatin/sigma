@@ -9,7 +9,7 @@
 <style>
     #buts-page1 {
     margin-left: 15%;
-    margin-top: 10%;
+    margin-top: 2%;
     font-family: cursive;
     }
 
@@ -17,7 +17,7 @@
         background: url(../static/img/play-but.png);
         background-size: cover;
         font-size: 40px;
-        padding: 20px 90px;
+        padding: 20px 16px;
         border-radius: 25px;
         color: white;
         text-decoration: none;
@@ -53,16 +53,32 @@
     .buts-page1 {
         margin-top: 100px;
     }
+    .points{
+        background: url(../static/img/play-but.png);
+        background-size: cover;
+        font-size: 40px;
+        padding: 20px 16px;
+        border-radius: 25px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .points_bk{
+        margin-top: 5%;
+        margin-left: 2%;
+    }
+
 </style>
 
 <body id="body-page1">
     {% block content %}
+    <div class = "points_bk"><a class = "points">Ваши балы: {{points}}</a></div>
     <table id="buts-page1">
         <tr>
             <td>
-                <div class="buts-page1"><a class="play-but-page1" href="{{'/registration/' + points + '/'}}">Зарегестрировать балы</a></div>
+                <div class="buts-page1"><a class="play-but-page3" href="{{'/1/' + points}}">Играть!</a></div>
             </td>
-        </tr> 
+        </tr>
         <tr>   
             <td>
                 <div class="buts-page1"><a class="play-but-page2" href="">Таблица лидеров!</a></div>
@@ -70,9 +86,9 @@
         </tr>
         <tr>
             <td>
-                <div class="buts-page1"><a class="play-but-page3" href="{{'/1/' + points}}">Играть!</a></div>
+                <div class="buts-page1"><a class="play-but-page1" href="{{'/registration/' + points + '/'}}">Зарегестрировать балы</a></div>
             </td>
-        </tr>
+        </tr> 
     </table>
     {% endblock %}
 </body>
