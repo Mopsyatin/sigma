@@ -15,6 +15,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     login = db.Column(db.String(100), nullable =False)
     password = db.Column(db.String(100), nullable = False)
+    points = db.Column(db.Integer, nullable = False)
 
     def __repr__(self):
         return f'<Card {self.id}>'
@@ -52,44 +53,21 @@ def mistake(points):
     return render_template("mistake.html",
                            points = points)
 
-@app.route('/<points>/login', methods=['GET','POST'])
-def login(points):
-        error = ''
-        if request.method == 'POST':
-            form_login = request.form['login']
-            form_password = request.form['password']
-            
-            users_db = User.query.all()
-            for user in users_db:
-                if form_login == user.login and form_password == user.password:
-                    return redirect('/menu/<points>', points = points)
-            else:
-                error = 'Неправильно указан пользователь или пароль'
-                return render_template('login.html', error=error, points = points)
-
-            
-        else:
-            return render_template('login.html', 
-                                   points = points)
-
-
-
-@app.route('/registration/<points>', methods=['GET','POST'])
-def reg(points):
+@app.route("/registration/<points>/", methods=['GET','POST'])
+def registration(points):
     if request.method == 'POST':
         login= request.form['login']
         password = request.form['password']
-        
+        points = points
 
-        user = User(login=login, password=password)
+        user = User(login=login, password=password, points = points)
         db.session.add(user)
         db.session.commit()
 
         
-        return redirect('/login/<points>')
-    
-    else:    
-        return render_template('registration.html', points = points)
+        return redirect('/menu/<points>')
+        
+    return render_template('registration.html', points = points)
 
 
 if __name__ == "__main__":
