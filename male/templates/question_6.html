@@ -12,7 +12,7 @@
         background-size: cover;
     }
     .topic {
-        animation: color-change 8s infinite;
+        animation: color-change 4s infinite;
         padding: 20px 40px;
         border-radius: 25px;
         border: 2px solid cyan;
@@ -27,6 +27,7 @@
         border: 2px solid cyan;
         margin-left: 100px;
         border-radius: 40px;
+        animation: reflection 2s infinite;
     }
     table {
         margin-left: 100px;
@@ -50,31 +51,39 @@
 
     @keyframes color-change{
         6.25% {
-            background-color: red;
+            box-shadow: 0px 0px 60px red;
         } 
         18.75% {
-            background-color: orange;
+            box-shadow: 0px 0px 60px orange;
         }
         31.25% {
-            background-color: yellow;
+            box-shadow: 0px 0px 60px yellow;
         }
         43.75% {
-            background-color: lime;
+            box-shadow: 0px 0px 60px lime;
         }
         56.25% {
-            background-color: green;
+            box-shadow: 0px 0px 60px green;
         }
         68.75% {
-            background-color: blue;
+            box-shadow: 0px 0px 60px blue;
         }
         81.25% {
-            background-color: purple;
+            box-shadow: 0px 0px 60px purple;
         }
         93.75% {
-            background-color: violet;
+            box-shadow: 0px 0px 60px violet;
         }
         100% {
-            background-color: red;
+            box-shadow: 0px 0px 60px red;
+        }
+    }
+    @keyframes reflection{
+        50% {
+            transform: scale(-1, 1);
+        }
+        100% {
+            transform: scale(1, 1);
         }
     }
 </style>
