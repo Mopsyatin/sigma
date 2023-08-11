@@ -28,30 +28,13 @@ def start(points):
     return render_template("index.html",
                            points = points)
 
-@app.route("/1/<points>")
-def question1(points):
+@app.route("/<level>/<points>")
+def question(points, level):
     return render_template('question_1.html',
-                           points = points,)
+                           points = points,
+                           level = level)
 
-@app.route("/2/<points>")
-def question2(points):
-    return render_template('question_2.html',
-                           points = points)
 
-@app.route("/3/<points>")
-def question3(points):
-     return render_template('question_3.html',
-                            points = points)
-
-@app.route("/4/<points>")
-def question4(points):
-    return render_template('question_4.html',
-                           points = points)
-
-@app.route("/5/<points>")
-def question5(points):
-    return render_template('question_5.html',
-                           points = points)
 
 @app.route("/<level>/correct/<points>/")
 def correct(level, points):
