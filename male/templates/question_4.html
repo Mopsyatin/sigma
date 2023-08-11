@@ -21,7 +21,8 @@
         margin-left: 950px;
         width: 600px;
         margin-top: 100px;
-        box-shadow: 0px 0px 60px rgb(255, 255, 255);
+        
+        animation: color-change 2s infinite;
         color: aliceblue;
     }
     img {
@@ -48,6 +49,14 @@
     }
     .link:hover {
         box-shadow: 0px 0px 60px aliceblue;
+    }
+    @keyframes color-change{
+        50% {
+            box-shadow: 0px 0px 60px rgb(255, 255, 255);
+        }
+        100% {
+            box-shadow: 0px 0px 100px transparent;
+        }
     }
 </style>
 

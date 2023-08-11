@@ -61,13 +61,21 @@
         border-radius: 25px;
         color: white;
         text-decoration: none;
+        animation: color-change 2s infinite;
     }
 
     .points_bk{
         margin-top: 5%;
         margin-left: 2%;
     }
-
+    @keyframes color-change{
+        50% {
+            box-shadow: 0px 0px 60px lime;
+        }
+        100% {
+            box-shadow: 0px 0px 100px transparent;
+        }
+    }
 </style>
 
 <body id="body-page1">
