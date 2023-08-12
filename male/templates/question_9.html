@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href= ../static/img/meme_doge_dog.jpg >
+    <meta charset="UTF-8">
+    <title>Question_5</title>
+</head>
+
+<style>
+    #body {
+        background: url(../static/img/bk_9.jpg);
+        background-size: cover;
+        font-family: cursive;
+    }
+    .topic {
+        background-color: dimgray;
+        padding: 20px 40px;
+        border-radius: 25px;
+        border: 2px solid rgb(120, 232, 133);
+        margin-left: 10%;
+        width: 600px;
+        margin-top: 50px;
+        box-shadow: 0px 0px 60px rgb(120, 232, 133);
+        color: aliceblue;
+    }
+    img {
+        width: 600px;
+        border: 2px solid rgb(120, 232, 133);
+        margin-left: 10%;
+        border-radius: 40px;
+    }
+    table {
+        margin-left: 12%;
+        margin-top: 20px;
+    }
+    .link {
+        color: aliceblue;
+        font-size: 20px;
+        text-decoration: none;
+        background-color: dimgray;
+        padding: 10px 60px;
+        border-radius: 25px;
+        border: 2px solid rgb(120, 232, 133);
+    }
+    .link-block {
+        margin-top: 50px;
+    }
+    .link:hover {
+        box-shadow: 0px 0px 60px rgb(120, 232, 133);
+    }
+</style>
+
+<body id="body">
+    {% block content %}
+    <h1 class="topic">Этого мужчину зовут: прячущий боль ...</h1>
+    <img src="../static/img/hurt.jpg" alt="">
+    <table>
+        <tr>
+            <td>
+                <div class="link-block"><a href="{{'/' + level + '/correct/' + points}}"  class="link">Харольд</a></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">Джо</a></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">Бернард</a></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="link-block"><a href="{{'/mistake/' + points}}"  class="link">Максим</a></div>
+            </td>
+        </tr>
+    </table>
+    {% endblock %}
+</body>
+
+</html>
