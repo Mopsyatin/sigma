@@ -10,7 +10,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app )
 
-questions = ['question_1.html','question_2.html','question_3.html','question_4.html','question_5.html','question_6.html', 'question_7.html','question_8.html','question_9.html']
+questions = ['question_1.html','question_2.html','question_3.html','question_4.html','question_5.html','question_6.html', 'question_7.html','question_8.html','question_9.html', 'question_10.html']
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
