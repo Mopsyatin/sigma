@@ -40,7 +40,18 @@
         color: white;
         text-decoration: none;
     }
-    .play-but-page1:hover, .play-but-page2:hover, .play-but-page3:hover {
+    .play-but-page4 {
+        background: url(../static/img/play-but.png);
+        background-size: cover;
+        font-size: 40px;
+        padding: 15px 52px;
+        border-radius: 25px;
+        color: white;
+        text-decoration: none;
+    }
+
+
+    .play-but-page1:hover, .play-but-page2:hover, .play-but-page3:hover, .play-but-page4:hover {
         box-shadow: 0px 0px 60px lime;
     }
 
@@ -97,6 +108,11 @@
                 <div class="buts-page1"><a class="play-but-page1" href="{{'/registration/' + points + '/'}}">Зарегестрировать балы</a></div>
             </td>
         </tr> 
+        <tr>
+            <td>
+                <div class="buts-page1"><a class="play-but-page4" href="{{'/meme/' + points + '/'}}">Рандомный мемчик</a></div>
+            </td>
+        </tr>
     </table>
     {% endblock %}
 </body>

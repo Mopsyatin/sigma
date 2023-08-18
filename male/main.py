@@ -11,6 +11,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app )
 
 questions = ['question_1.html','question_2.html','question_3.html','question_4.html','question_5.html','question_6.html', 'question_7.html','question_8.html','question_9.html', 'question_10.html']
+memes = ['https://cdn.discordapp.com/attachments/1104405505146896386/1141977906353020968/meme_3.jpg', 'https://cdn.discordapp.com/attachments/1104405505146896386/1141975353129193502/meme_1.jpg',
+         'https://cdn.discordapp.com/attachments/1104405505146896386/1141980621825126420/34e3f4b07376ef0480c57c078958b6f4.png', 'https://cdn.discordapp.com/attachments/1104405505146896386/1141980622240358430/9b5e8acba14a73564646bb5b553388bf.png', 'https://cdn.discordapp.com/attachments/1104405505146896386/1141980622840135770/6360b44e0608788a024efe02dd07ade4.png',
+         'https://cdn.discordapp.com/attachments/1104405505146896386/1141980623494455296/179221c75933c2a56239802e533c345d.png', 'https://cdn.discordapp.com/attachments/1104405505146896386/1141980624106815508/13502abc20f2f7065a025181410fd862.png', 'https://cdn.discordapp.com/attachments/1104405505146896386/1141980624555618314/4cbfdb7967ca7ac87d0d261d8bc86d56.png']
+meeme = ''
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -81,6 +85,12 @@ def reg(points):
         return redirect('/menu/' + points)
         
     return render_template('registration.html', points = points)
+
+@app.route("/meme/<points>/")
+def random_meme(points):
+    global meeme
+    return render_template("random_meme.html", points=points, meeme = random.choice(memes))
+
 
 
 if __name__ == "__main__":

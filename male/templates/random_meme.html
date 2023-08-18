@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random_meme</title>
+</head>
+
+<style>
+    body {
+        background: url(https://cellularnews.com/images/hd/meme-1920X1080-n05tyy40virvj47q.webp);
+        font-family: cursive;
+    }
+    .main {
+        color: aliceblue;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+    }
+    .main-block {
+        padding: 20px 40px;
+        background: url(https://cdn.discordapp.com/attachments/1104405505146896386/1139484874370207795/menu_but_texture.jpg);
+        background-size: cover;
+        width: 120px;
+        margin: 40px 40px;
+        border-radius: 25px;
+    }
+    .main-block:hover {
+        box-shadow: 0px 0px 60px orange;
+    }
+    table {
+        margin: auto;
+    }
+    .core-image {
+        border-radius: 40px;
+        border: 3px solid aliceblue;
+        animation: color-change 2s infinite;
+    }
+    @keyframes color-change{
+        50% {
+            box-shadow: 0px 0px 60px rgb(255, 255, 255);
+        }
+        100% {
+            box-shadow: 0px 0px 100px transparent;
+        }
+    }
+</style>
+
+<body>
+    {% block content %}
+    <div class="main-block"><a href="/menu/0" class="main">На главную</a></div>
+    <table>
+        <tr>
+            <td>
+                <div class="image"><img src="{{meeme}}" class="core-image"></div>
+            </td>
+        </tr>
+    </table>
+    {% endblock %}
+</body>
+
+</html>
